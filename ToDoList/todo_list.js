@@ -5,6 +5,7 @@ const taskInput = document.getElementById("taskInput");
 const addTaskBtn = document.getElementById("addTaskBtn");
 const taskList = document.getElementById("taskList");
 const clearCompletedBtn = document.getElementById("clearCompletedBtn");
+const clearAllTasksBtn = document.getElementById("clearAllTasksBtn")
 
 let tasks = [];
 
@@ -29,8 +30,9 @@ function displayTasks() {
 
     // iterates through the tasks array using for each
     // creating a list item <li> for each task
+    
     tasks.forEach((task, index) => {
-
+        
         // constructs HTML content for each task (checkbox, labl and corresponding ids)
         const li = document.createElement("li");
         li.innerHTML = `<input type="checkbox" id="task-${index}" ${task.completed ? "checked" : ""}>
@@ -61,9 +63,21 @@ function clearCompletedTasks() {
     displayTasks();
 }
 
+// corrigir!
+function clearAllTasks() {
+    while (tasks.length > 0) {
+        tasks = tasks.pop(); 
+    }
+
+    displayTasks();
+}
+
 // Perform addEventListener for addTask and clearCompletedTasks buttons
 // to listen for clicks after clicking the Add Task and Clear Completed buttons.
 addTaskBtn.addEventListener("click", addTask);
 clearCompletedBtn.addEventListener("click", clearCompletedTasks);
+clearAllTasksBtn.addEventListener("click", clearAllTasks);
 
 displayTasks();
+
+

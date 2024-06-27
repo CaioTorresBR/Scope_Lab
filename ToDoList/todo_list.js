@@ -65,11 +65,9 @@ function clearCompletedTasks() {
 
 // corrigir!
 function clearAllTasks() {
-    while (tasks.length > 0) {
-        tasks = tasks.pop(); 
-    }
-
-    displayTasks();
+    tasks = [];
+    taskList.innerHTML = ""
+    //displayTasks();
 }
 
 // Perform addEventListener for addTask and clearCompletedTasks buttons

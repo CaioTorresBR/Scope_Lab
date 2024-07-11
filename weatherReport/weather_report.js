@@ -10,20 +10,20 @@ function showweatherDetails(event) {
         // my own apiKey obtained from opeanweather account 
     const apiKey = '736bb5b8738c99a15f6d026a6ef23733' ;
         // url for the api that gets weather by city name
-    const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}'
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`
 
     // -- practice task --
         // getting weather by lattitude and longitude
     const lat = document.getElementById('lattitude').value;
     const lon = document.getElementById('longitude').value;
         // url for api that gets weather by lattitude and longitude
-    const apiUrlLatLon = 'https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}'
+    const apiUrlLatLon = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`
 
 
     // -- fetch details related to city (user input) --
         // initiates an ansynchronous HTTP request to the specified apiUrl
         // to retrieve weather data
-    fetch(apiUrl)
+    fetch(apiUrlLatLon)
         
         // response handling with promise
             // processes the response by first converting to JSON format 
